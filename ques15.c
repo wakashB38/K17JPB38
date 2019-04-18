@@ -1,6 +1,9 @@
+
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
+#define MAX 10000
+
 
 //declaring process structure
 struct process
@@ -16,6 +19,7 @@ struct process
 
 int main()
 {
+	int time,count = 0,min;
     double TotalWT=0;   //Total waiting time
     double TotalTAT=0;  //total turn around time
    
@@ -44,14 +48,17 @@ int main()
 		p[i].ct=0;
 	}	
 	
-	system("cls");
 	
+	system("cls");
+	printf("\n\nProcessing...\n");
+
 	//scheduling processes
-	int time=0;
-	int count=0;
+	p[n].bt = MAX;
+	time = 0;
 	while(count != n)
+	
     {
-        int min = n;
+        min = n;
         for(i = 0; i < n; i++)
 		{
             if(p[i].at <= time && p[i].bt < p[min].bt && p[i].bt > 0)
@@ -80,7 +87,7 @@ int main()
 	}
 	
 	//displaying the final scenario
-	printf("PROCESS_ID\t| Arrival_TIME  | Burst_Time\t|Completion_Time|Turn_Around_Time|Waiting_Time \n");
+	printf("\nPROCESS_ID\t| Arrival_TIME  | Burst_Time\t|Completion_Time|Turn_Around_Time|Waiting_Time \n");
 	
 	for(i=0;i<n;i++)
 	{
