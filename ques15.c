@@ -25,7 +25,7 @@ int main()
    
 
     int n,i; // n: no.of processes
-    // i: iteration counter
+    
 
     printf("\n\n\n\n -----------  | Question 15 : Priority Scheduling ( Shortest Remaining Time First : Pre-emptive ) |  -----------\n\n");
     printf("\n | Enter the number of processes  | :  ");
